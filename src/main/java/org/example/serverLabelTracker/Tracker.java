@@ -4,9 +4,9 @@ import java.util.LinkedList;
 
 public class Tracker {
 
-    private LinkedList<Label> attached = new LinkedList<>();
+    private final LinkedList<Label> attached = new LinkedList<>();
 
-    private LinkedList<Label> detached = new LinkedList<>();
+    private final LinkedList<Label> detached = new LinkedList<>();
 
 
 
@@ -14,16 +14,8 @@ public class Tracker {
         return attached;
     }
 
-    public void setAttached(LinkedList<Label> attached) {
-        this.attached = attached;
-    }
-
     public LinkedList<Label> getDetached() {
         return detached;
-    }
-
-    public void setDetached(LinkedList<Label> detached) {
-        this.detached = detached;
     }
 
     public String attach(String labelName) {
@@ -42,7 +34,7 @@ public class Tracker {
         }
     }
 
-    private void addToList(Label first, LinkedList<Label> list) {
+    void addToList(Label first, LinkedList<Label> list) {
         boolean added = false;
         for (int i = 0; i < list.size(); i++) {
             Label label = list.get(i);
